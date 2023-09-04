@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px;
+    margin: 50px;
+    font-family: 'Poppins', sans-serif;;
+}
+/* CONTAINER */
+.container {
+    display: grid;
+   row-gap: 5px;
+}
+/* HEADER */
+header{
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 300px;
+    background-image: url(assets/white-hoodie-man-with-green-pants-city.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.feature-1{
+    grid-area: feature-1;
+    background-image: url(assets/mediamodifier-kJXGTOY1wLQ-unsplash.jpg);
+    background-position: center;
+    color: black;
+}
+
+.feature-2{
+    grid-area: feature-2;
+    background-image: url(assets/meysam-jarahkar-NMYG69BG_Jg-unsplash.jpg);
+    background-position: 5%;
+}
+
+.hero > * {
+    display: none;
+}
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.2fr;
+   align-items: end;
+}
+
+.menu .brand {
+    justify-self: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));
+    column-gap: 5px;
+   
+}
+.menu a {
+    display: block;
+    background-color: black;
+    text-align: center;
+    padding: 3px;
+}
+
+
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+    gap: 5px;
+}
+
+.category .sampleImage:hover {
+    opacity: 0.7;
+    transition: 1s;
+}
+
+.category {
+    background-color: white;
+    min-height: 200px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.category .sampleImage {
+    min-height: 80%;
+    background-size: cover;
+    background-position: center top;
+    transition: 1s;
+}
+
+.image-1 {background-image: url(assets/leyli-nova-gd0qpyteVFY-unsplash.jpg);}
+.image-2 {background-image: url(assets/meysam-jarahkar-NMYG69BG_Jg-unsplash.jpg);}
+.image-3 {background-image: url(assets/sebastien-mouilleau-T096kjLSWxo-unsplash.jpg);}
+.image-4 {background-image: url(assets/clem-onojeghuo-n6gnCa77Urc-unsplash.jpg);}
+.image-5 {background-image: url(assets/dom-hill-nimElTcTNyY-unsplash.jpg);}
+
+.introduction {
+    order: 4;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 7%;
+    margin-top: 2.5%
+}
+
+.introduction .image {
+    height: 100%;
+    background-image: url(assets/Jokowi-Brand-Lokal.jpg);
+}
+
+.introduction .image-container{
+    background-color: white;
+    padding: 20px;
+    min-height: 500px;
+    margin-left: 10%;
+}
+
+.introduction .text {
+    align-self: center;
+}
+
+.text p {
+    line-height: 200%;
+}
+
+.text h3 {
+    font-weight: bolder;
+    font-size: 1.8em;
+    text-transform: capitalize;
+}
+
+/* RESPONSIVE BREAKPONT */
+@media (max-width: 1024px) {
+    .container{
+        gap: 5px;
+    }
+    .menu {
+        grid-template-columns: 1fr;
+        order: 2;
+    }
+
+    .menu .brand {
+        display: none;
+    }
+
+    .hero > * {
+        display: block;
+        background-color: black;
+        color: white;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       align-items: start;
+        
+    }
+
+    .categories{
+        order: 3;
+    }
+
+   .introduction{
+    grid-template-columns: 1fr;
+    grid-template-areas: 'image-container'
+                         'text';
+   }
+
+   .image-container{
+    grid-area: image-container;
+   }
+   .text{
+    grid-area: text;
+   }
+    
+}
+
+@media (max-width: 768px) {
+  
+    
+}
+
+@media (max-width: 576px) {
+    
+}
